@@ -6,5 +6,5 @@ Rails.application.routes.draw do
    root 'static_pages#home'
    get 'users/sign_up' => 'users#new'
    post 'users/sign_up' => 'users#create'
-   resources :users, only: [:show]
+   resources :users, only: [:show, :edit, :update]
 end
