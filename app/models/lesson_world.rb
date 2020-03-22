@@ -1,0 +1,2 @@
+class LessonWorld < ApplicationRecord
+end
