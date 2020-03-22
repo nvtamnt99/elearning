@@ -4,7 +4,7 @@
       <div class="text-left">
         <label> email: <%= @user.email %></label><br>
         <label> fullname: <%= @user.fullname %></label><br>
-        <label> avatar: <%= @user.avatar %></label>
+        <label> avatar: <%= avatar_tag photo.avatar_url.to_s %></label>
       </div>
       <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %>
       <%= link_to "Logout", logout_path, method: :delete %>
