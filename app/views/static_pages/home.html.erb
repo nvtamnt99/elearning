@@ -5,10 +5,12 @@
     <title>Home</title>
   </head>
   <body>
-    <%= link_to 'Register',users_sign_up_path %>
-    <%= link_to 'Login',login_path %>
     <% if log_in? %>
       <label for="">You are Logged In, <%= current_user.fullname %></label>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% else %>
+     <%= link_to 'Register',users_sign_up_path %>
+     <%= link_to 'Login',login_path %>
     <%end%>
     <%= render 'shared/slider' %>
   </body>
