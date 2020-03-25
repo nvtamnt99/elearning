@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -7,10 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = "Register success"
+      flash[:success] = 'Register successfully'
       redirect_to root_path
     else
-      flash[:success] = "Register failed"
+      flash[:alert] = 'Register failed'
       render :new
     end
   end
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Update success"
+      flash[:success] = 'Update success'
       redirect_to @user
     else
       render 'edit'
@@ -38,5 +39,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :email, :fullname, :password, :password_confirmation, :avatar
   end
-
 end
