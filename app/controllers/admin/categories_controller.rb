@@ -6,10 +6,10 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = 'Create category success'
+      flash[:success] = 'Create category successfully'
       redirect_to root_path
     else
-      flash[:success] = 'Create category failed'
+      flash[:alert] = 'Create category failed'
       render :new
     end
   end
