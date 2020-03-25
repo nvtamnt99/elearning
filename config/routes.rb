@@ -7,4 +7,5 @@ Rails.application.routes.draw do
    get 'users/sign_up' => 'users#new'
    post 'users/sign_up' => 'users#create'
    resources :users, only: [:show, :edit, :update]
+   resources :categories, only: [:index, :new, :create]
 end
