@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = 'Register success'
+      flash[:success] = 'Register successfully'
       redirect_to root_path
     else
       flash[:alert] = 'Register failed'
