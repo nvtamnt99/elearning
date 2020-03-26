@@ -1,0 +1,11 @@
+<h1>Words</h1>
+<%= form_for Word.new ,url: admin_words_path do |f| %>
+  <div class="form-group">
+    <%= f.label:content %>
+    <%= f.text_field :content, class:'form-control',placeholder:"enter your content" %>
+  </div>
+  <div class="">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<%= link_to 'Home',root_path %>
