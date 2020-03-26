@@ -1,6 +1,6 @@
-class CreateLessonWorlds < ActiveRecord::Migration[6.0]
+class CreateLessonWords < ActiveRecord::Migration[6.0]
   def change
-    create_table :lesson_worlds do |t|
+    create_table :lesson_words do |t|
       t.integer :lesson_id
       t.integer :word_id
       t.integer :word_answer_id
