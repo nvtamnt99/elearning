@@ -1,12 +1,11 @@
 class Admin::WordsController <ApplicationController
   def index
-    @word = Word.all
+    @words = Word.all
   end
 
   def new
     @word = Word.new
   end
-
   def create
     @word = Word.new word_params
     if @word.save
