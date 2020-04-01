@@ -1,7 +1,7 @@
 <%= form_for @word, url: admin_words_path do |f| %>
   <%= f.label :content %>
   <%= f.text_field :content %>
-    <%= f.fields_for :word_answers, @word.word_answers do |ff| %>
+    <%= f.fields_for :word_answers, @word.word_answers.build do |ff| %>
       <%= ff.label :content %>
       <%= ff.text_field :content %>
     <% end %>
