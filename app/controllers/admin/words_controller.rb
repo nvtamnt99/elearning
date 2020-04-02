@@ -3,7 +3,9 @@ class Admin::WordsController <ApplicationController
     @words = Word.all
   end
 
-  def new; end
+  def new
+    @word = Word.new
+  end
 
   def create
     @word = Word.new word_params
@@ -19,6 +21,6 @@ class Admin::WordsController <ApplicationController
   private
 
   def word_params
-    params.require(:word).permit :content
+    params.require(:word).permit :content, word_answers_attributes: [:id, :content, :word_id, :correct]
   end
 end

@@ -1,11 +1,9 @@
-<h1>Words</h1>
-<%= form_for Word.new ,url: admin_words_path do |f| %>
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_field :content, class:'form-control',placeholder:"enter your content" %>
-  </div>
-  <div class="">
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  </div>
+<%= form_for @word, url: admin_words_path do |f| %>
+ <%= f.label :content %>
+ <%= f.text_field :content %><br>
+ <%= f.fields_for :word_answers, @word.word_answers.build do |ff| %>
+   <%= ff.label :content %>
+   <%= ff.text_field :content %><br>
+ <% end %>
+ <%= f.submit "Create" %>
 <% end %>
-<%= link_to 'Home',root_path %>
