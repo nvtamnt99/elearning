@@ -11,5 +11,6 @@ Rails.application.routes.draw do
    namespace :admin do
      resources :categories, only: [:new, :create]
      resources :words, only: [:index, :new, :create]
+     resources :admin_pages, only: [:home]
    end
 end
