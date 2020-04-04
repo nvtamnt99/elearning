@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   validates :name, presence: true
-  belongs_to :lesson
-  belongs_to :word  
+  has_many :lessons
+  has_many :words
 end
