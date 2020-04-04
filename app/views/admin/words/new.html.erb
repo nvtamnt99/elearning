@@ -1,9 +1,16 @@
 <%= form_for @word, url: admin_words_path do |f| %>
- <%= f.label :content %>
- <%= f.text_field :content %><br>
- <%= f.fields_for :word_answers, @word.word_answers.build do |ff| %>
-   <%= ff.label :content %>
-   <%= ff.text_field :content %><br>
- <% end %>
- <%= f.submit "Create" %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class:'form-control',placeholder:"enter your content" %><br>
+  </div>
+  <%= f.fields_for :word_answers, @word.word_answers.build do |builder| %>
+    <div class="">
+      <%= render "word_answer_fields", :f => builder %>
+    </div>
+  <% end %>
+  <div class="text-center">
+    <%= f.submit "Create", class: 'btn btn-primary' %>
+  </div>
 <% end %>
+<%= link_to 'Home',root_path %>
+<%= link_to 'Back', new_admin_category_path, class: 'btn btn-link pull-right' %>
